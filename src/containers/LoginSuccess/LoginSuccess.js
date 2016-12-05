@@ -7,8 +7,7 @@ import * as authActions from 'redux/modules/auth';
       user: state.auth.user
     }),
     authActions)
-export default
-class LoginSuccess extends Component {
+export default class LoginSuccess extends Component {
   static propTypes = {
     user: PropTypes.object,
     logout: PropTypes.func
@@ -22,7 +21,7 @@ class LoginSuccess extends Component {
         <h1>Login Success</h1>
 
         <div className={styles.greeting}>
-          <p>Hello,{user.username}! 欢迎来到Omzug! You have just successfully logged in, How exciting it is!
+          <p>Hello,{user.username}! Welcome to Game Center!
           </p>
 
           <p>you have the following information here: </p>

@@ -43,7 +43,7 @@ export default class Home extends Component {
               <div>
                 <p className={styles.responsiveDesign}>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                 creative product
+                 creative Games
                 </p>
             </div>
           </div>
@@ -55,7 +55,7 @@ export default class Home extends Component {
             </div>
             <div>
               <p className={styles.tech}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                采用最新的互联网技术</p>
+                Most advanced technologies</p>
             </div>
           </div>
           <div className={styles.foto2}>

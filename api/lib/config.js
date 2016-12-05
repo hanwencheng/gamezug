@@ -1,21 +1,14 @@
 /**
  * Created by hanwencheng on 1/11/16.
  */
-var awsBucketName = 'test.omzug.com'
-if(process.env.NODE_ENV === "production"){
-  awsBucketName = 'omzug.com'
-}
 
 module.exports = {
   host : 'localhost:27017',
-  databaseName: 'fangweitong',
-  dbUser : 'omzug',
-  dbPassword : '010702hanwen',
+  databaseName: 'gamecenter',
+  dbUser : 'hanwencheng',
+  dbPassword : 'hanwencheng',
   //please list the collection names one by one
   userCollectionName : 'user',
-  houseCollectionName : 'house',
-  postCollectionName : 'post',
-  entityCollectionName : 'entity',
   sessionAge : 1 * 24 * 60 * 60 * 1000,
   pageSize : 9,
   awsFolder : "photos",
@@ -38,7 +31,7 @@ module.exports = {
   logOptions : {
     "debugLevel" : "debug",
     "level": "debug",
-    "filename": "./logs/omzug",
+    "filename": "./logs/gamecenter",
     "filesize": "10000000",
     "filecount": "100"
   }

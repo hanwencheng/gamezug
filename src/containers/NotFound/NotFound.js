@@ -8,7 +8,7 @@ export default function NotFound() {
     <div className={styles.containerNotFound}>
       <Helmet title="- -|||"/>
       <div><h1>- -||| 404!</h1></div>
-      <div><p>Ooops! 这个页面不存在啊! </p></div>
+      <div><p>Ooops! The page is not existed! </p></div>
       <div><img src={imageAddress.NotFoundImage}/></div>
     </div>
   );

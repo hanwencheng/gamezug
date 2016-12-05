@@ -17,18 +17,6 @@ export default function getUpdate(req, params) {
   return new Promise((resolve, reject) => {
     DB.get('user', {_id: houseId}, function (result) {
       logger.debug('we get house with result ', houseId)
-
-      //filter important infomation
-
-      //for(var item in data){
-      //  if(data.hasOwnProperty(item)){
-      //    var forbid = ["email" , "username", "password"]
-      //    if(forbid.some(function(word){
-      //        return item == word
-      //      }))
-      //      delete data[item];
-      //  }
-      //}
       return resolve(result.data)
     }, function (err) {
       logger.error('we got error is, ', err)

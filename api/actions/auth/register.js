@@ -39,6 +39,7 @@ export default function register(req) {
           }
         })
       },
+
       //checking register username
       function(callback){
         DB.get('user', {username : username},
@@ -55,6 +56,7 @@ export default function register(req) {
             }
           })
       },
+
       //finally save it into our database
       function(callback){
         DB.save("user", req.body, function(data){

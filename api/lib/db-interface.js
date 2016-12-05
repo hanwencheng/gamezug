@@ -47,18 +47,10 @@ DI.init = function () {
     logger.info('[DB] Warning: Re-initializing');
   }
   //create the database collection if not existed.
-  var collection1 = this.db.collection(houseCollectionName);
-  var collection2 = this.db.collection(userCollectionName);
+  var collection = this.db.collection(userCollectionName);
   logger.info('[DB] Initialized:');
-  //add transaction batch
-  //self.batch = House.collection.initializeOrderedBulkOp();
-  //self.batchCount = 0;
-  //self.batchLayer = {};
-  //
-  //setInterval(self.intervalSaveTxs, batchInsertInterval);
 
   this.initialized = true;
-  insert();
 };
 
 /**
@@ -95,6 +87,36 @@ DI.save = function(type, data, resolve, reject){
         status : true,
         data : result
       })
+    }
+  })
+}
+
+/**
+ * User login check
+ * @param username {String} username
+ * @param password {String} password
+ * @param resolve promise resolve with {status : true}
+ * @param reject promise error
+ */
+DI.userLogin =function(username, password, resolve, reject){
+  logger.trace("query info is", username, password)
+  User.findOne({username : username}, function(err, user) {
+
+    if (err) {
+      reject({msg : LOGTITLE + Errors.AuthFailed + err});
+    }else if (user == null) {
+      reject({msg : LOGTITLE + Errors.AuthFailed + " user not find"})
+    }else {
+      // test a matching password
+      user.comparePassword(password, function (err, isMatch) {
+        if (err) {
+          reject({msg : LOGTITLE + Errors.AuthFailed + " error in verify the password" + err});
+        }else if(!isMatch){
+          reject({msg : LOGTITLE + Errors.AuthFailed + " wrong password"})
+        }else{
+          resolve({status : isMatch, data : user})
+        }
+      });
     }
   })
 }
@@ -241,71 +263,7 @@ DI.getAll = function(type, query, select, skipNumber, resolve, reject){
   })
 }
 
-/**
- * Error Code
- * 0 : internal error
- * @param type
- * @param query
- * @param resolve
- * @param reject
- */
-DI.getAllNoLimit = function(type, query, resolve, reject){
-  let steps = [
-    function(callback){
-      findSchema(type, callback)
-    },
-    function(schema, callback){
-      // notice taht page start from 0
-      schema.find(query).sort({'createdAt' : -1}).exec(function(err, result){
-        if(err){
-          callback({type : 0, msg : LOGTITLE + Errors.DataBaseFailed + err })
-        }
-        callback(null, result)
-      })
-    }
-  ]
 
-  async.waterfall(steps, function(err, result){
-    if(err){
-      reject(err)
-    }else {
-      resolve({
-        status : true,
-        data : result
-      })
-    }
-  })
-}
-
-/**
- * User login check
- * @param email {String} username
- * @param password {String} password
- * @param resolve promise resolve with {status : true}
- * @param reject promise error
- */
-DI.userLogin =function(email, password, resolve, reject){
-  logger.trace("query info is", email, password)
-  User.findOne({email : email}, function(err, user) {
-
-    if (err) {
-      reject({msg : LOGTITLE + Errors.AuthFailed + err});
-    }else if (user == null) {
-      reject({msg : LOGTITLE + Errors.AuthFailed + " user not find"})
-    }else {
-      // test a matching password
-      user.comparePassword(password, function (err, isMatch) {
-        if (err) {
-          reject({msg : LOGTITLE + Errors.AuthFailed + " error in verify the password" + err});
-        }else if(!isMatch){
-          reject({msg : LOGTITLE + Errors.AuthFailed + " wrong password"})
-        }else{
-          resolve({status : isMatch, data : user})
-        }
-      });
-    }
-  })
-}
 
 DI.delete = function(type, query, resolve, reject){
   let steps = [
@@ -366,18 +324,6 @@ DI.update = function(type, query, update, resolve, reject){
       })
     }
   })
-}
-
-DI.getBrandList = function(resolve, reject){
-  House.find().distinct('brand', function(error, brands) {
-    if(error)
-      return reject({msg : "error in querying brands list : "  + error.toString() })
-
-    resolve({
-      status: true,
-      data : brands,
-    })
-  });
 }
 
 /**

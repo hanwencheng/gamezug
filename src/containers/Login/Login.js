@@ -18,7 +18,7 @@ import imageAddress from '../../constant/imageAddress'
 
 @reduxForm({
   form: 'login',
-  fields : ['email', 'password'],
+  fields : ['username', 'password'],
   validate : loginValidation,
 })
 
@@ -35,9 +35,7 @@ export default class Login extends Component {
   }
 
   handleSubmit = () => {
-    //console.log("submit now with error " + this.props.fields.email.error || this.props.fields.password.error ? true : loggingIn)
-    this.props.login(this.props.fields.email.value, this.props.fields.password.value);
-    //console.log("submit now with user: " +  this.props.fields.email.value,  this.props.fields.password.value)
+    this.props.login(this.props.fields.username.value, this.props.fields.password.value);
   }
 
   handleKeyPress = (event) => {
@@ -48,14 +46,14 @@ export default class Login extends Component {
 
   render() {
     const {
-      fields: {email, password},
+      fields: {username, password},
       user, loggingIn, loginError, loadError
     } = this.props;
     const styles = require('./Login.scss');
 
     const inputStyle = uiStyles.inputStyle;
     const buttonStyle = uiStyles.buttonStyle;
-    const anyError = email.error || password.error;
+    const anyError = username.error || password.error;
 
     const getError = ()=> {
       if(loginError != null){
@@ -73,20 +71,20 @@ export default class Login extends Component {
         {!user &&
         <div className={styles.container}>
           <div className={styles.loginForm}>
-            <div className={styles.loginTitle}><h1>登录</h1></div>
+            <div className={styles.loginTitle}><h1>Login</h1></div>
             <form onSubmit={this.handleSubmit}>
               <div className={'form-group'}>
                 <div>
-                  <TextField type="text" hintText="邮箱" style={inputStyle}
-                             floatingLabelText="邮箱"
-                             errorText={email.touched && email.error ? email.error : null}  {...email}
+                  <TextField type="text" hintText="Username" style={inputStyle}
+                             floatingLabelText="Username"
+                             errorText={username.touched && username.error ? username.error : null}  {...username}
                   />
                 </div>
               </div>
               <div className={'form-group'}>
                 <div>
-                  <TextField type="password" hintText="密码" style={inputStyle}
-                             floatingLabelText="密码"
+                  <TextField type="password" hintText="Password" style={inputStyle}
+                             floatingLabelText="Password"
                              errorText={password.touched && password.error ? password.error : null} {...password}
                   />
                 </div>

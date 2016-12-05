@@ -4,7 +4,6 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import Helmet from 'react-helmet';
-// it is not used yet
 import {initialize} from 'redux-form';
 import {RegisterForm} from 'components';
 import {register, clearLoginError} from 'redux/modules/auth';
@@ -30,8 +29,6 @@ export default class Register extends Component{
 
   handleSubmit = (data) => {
     this.props.register(data)
-    //this.props.initialize('register', {})
-    //window.alert('Data submitted! ' + JSON.stringify(data));
   }
 
   render(){
@@ -40,7 +37,7 @@ export default class Register extends Component{
 
     return (
       <div className={styles.registerPage}>
-        <Helmet title="注册"/>
+        <Helmet title="Register"/>
         <Snackbar
           open={loginError != null}
           message={loginError != null ? loginError : ""}
@@ -53,7 +50,7 @@ export default class Register extends Component{
 
         <div className={styles.container}>
         <div className={styles.registerForm}>
-          <div className={styles.registerTitle}><h1>注册</h1></div>
+          <div className={styles.registerTitle}><h1>Register</h1></div>
           <RegisterForm onSubmit={this.handleSubmit}/>
         </div>
 

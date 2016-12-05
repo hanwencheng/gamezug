@@ -13,21 +13,19 @@ export default class About extends Component {
     const styles = require('./About.scss');
     return (
       <div className={styles.container}>
-        <Helmet title="关于我们"/>
+        <Helmet title="About"/>
         <div className={styles.text}>
           <div>
-            <p className={styles.cnText}>Omzug由来自斯图加特大学和柏林白湖艺术学院的学生于2016年在德国柏林创建。
-              网站名字来源于德文"搬家"这个单词"Umzug".
+            <p className={styles.cnText}>Game center is a center for interesting stuff!
             </p>
           </div>
           <div>
-             <p className={styles.cnText}> 更多的功能正在开发中,尽请期待。</p>
+             <p className={styles.cnText}>Let it be!</p>
           </div>
           <div className={styles.enText}>
             <p>
-            Omzug is a web application created in 2016 by students from Uni Stuttgart
-            and Kunsthochschule Berlin-Weissensee.
-            It initially aims to provide a renting platform for Chinese students in Germany.
+            This web page is created for Aeria Games in order to show something which could show front-end developing
+              capability.
           </p>
           </div>
         </div>

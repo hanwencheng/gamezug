@@ -23,21 +23,21 @@ module.exports = Object.assign({
   noImagePath : 'https://s3.eu-central-1.amazonaws.com/omzug.com/favicon/no-image.jpg',
   mainGifPath : "https://s3.eu-central-1.amazonaws.com/omzug.com/gif/main.gif",
   app: {
-    title: '臻识',//head changeable
-    description: '防伪通',
-    introduction: '基于区块链技术的防伪认证解决方案',
-    introduction2:'无法更改的网络信息证明',
-    introductionEn : 'A verification platform based on Blockchain technology.',
+    title: 'Game center',//head changeable
+    description: 'Gaming center',
+    introduction: 'a game center ',
+    introduction2:'could be fun',
+    introductionEn : 'A game center for testing user abilities',
     head: {
-      titleTemplate: 'Zhensys : %s',
+      titleTemplate: 'Game Center : %s',
       meta: [
-        {name: 'description', content: '基于区块链技术的防伪解决方案'},
+        {name: 'description', content: 'A game center for testing user abilities'},
         {charset: 'utf-8'},
-        {property: 'og:site_name', content: '臻识防伪通'},
+        {property: 'og:site_name', content: 'GameZug'},
         {property: 'og:image', content: 'https://s3.eu-central-1.amazonaws.com/omzug.com/favicon/apple-icon.png'},
         {property: 'og:locale', content: 'zh_CN'},
         {property: 'og:title', content: 'Omzug'},
-        {property: 'og:description', content: '基于区块链技术的防伪解决方案'},
+        {property: 'og:description', content: 'A game center for testing user abilities'},
         {property: 'og:card', content: 'summary'},
         {property: 'og:site', content: '@hanwencheng'},
         {property: 'og:creator', content: '@hanwencheng'},
