@@ -1,0 +1,83 @@
+@import "../../theme/myHover.scss";
+@import "../../theme/media.scss";
+.container{
+  margin-top: 130px;
+  display: flex;
+  justify-content: center;
+
+
+}
+.text{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 37%;
+  margin-top: 65px;
+  margin-bottom: 110px;
+  line-height: 2.0em;
+  color: grey;
+  font-family:  "Avenir Next","Lantinghei SC",  Arial, sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  a{
+    &:hover{
+      color:black;
+    }
+    &:visited{
+      color:black;
+    }
+    &:active{
+      color:darkslategrey;
+    }
+  }
+}
+
+
+
+
+.cnText{
+  letter-spacing: 1px;
+  font-size: 13px;
+  line-height: 2.1em;
+  color: #484848;
+}
+
+.enText{
+  margin-top: 15px;
+}
+
+@include max-screen(768px){
+  .container {
+    margin-top: 60px;
+  }
+
+  .text{
+    width:60%;
+    margin-top: 60px;
+    margin-bottom:70px;
+  }
+}
+
+@include max-screen(530px){
+  .text{
+    width:87%;
+  }
+}
+
+
+@include max-screen(414px){
+  .text{
+    margin-top: 80px;
+    margin-bottom: 30px;
+  }
+}
+@include max-screen(375px){
+  .text{
+    margin-top: 80px;
+  }
+}
+@include max-screen(320px){
+  .text{
+    margin-top: 80px;
+  }
+}

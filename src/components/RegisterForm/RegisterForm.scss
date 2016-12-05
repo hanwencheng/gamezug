@@ -1,0 +1,14 @@
+.registerForm{
+  margin-right: 60px;
+
+  .input{
+    width: 400px;
+  }
+
+  .buttonGroup{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: -10px;
+  }
+}

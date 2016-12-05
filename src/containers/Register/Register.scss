@@ -1,0 +1,84 @@
+@import '../../theme/media';
+
+.registerPage {
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-bottom: -90px;
+  }
+  input {
+    width:100%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  form {
+    margin: 30px 0;
+    :global(.btn) {
+      margin-left: 10px;
+    }
+  }
+
+  .registerForm {
+    width: 40%;
+    min-width: 256px;
+    max-width: 500px;
+    padding-left: 120px;
+    padding-top: 55px;
+    .registerTitle{
+      margin-bottom: -20px;
+    }
+    .raisedButton{
+      display: flex;
+      justify-content: flex-start;
+      margin-left: -25px;
+    }
+  }
+
+  .registerPic {
+    width: 60%;
+    min-width: 384px;
+    margin-top: 80px;
+    padding : 20px;
+    margin-right: 15px;
+    img{
+      max-width:100%;
+    }
+  }
+}
+.error{
+  margin : 30px;
+  border-radius: 10px;
+}
+
+@include max-screen(768px){
+  .registerPage {
+    .registerTitle {
+      margin: 0 auto;
+      padding: 40px 0 0 0;
+    }
+    .container {
+      .registerPic {
+        display: none;
+      }
+      .registerForm {
+        padding: 0 40px;
+        width: 60%;
+      }
+    }
+  }
+}
+
+@include max-screen(600px){
+  .registerPage{
+    .container{
+      .registerForm{
+        padding : 0 20px;
+        width:80%;
+      }
+    }
+  }
+}

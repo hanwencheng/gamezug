@@ -1,0 +1,181 @@
+@import "../../theme/media.scss";
+@import "../../theme/myHover.scss";
+@import "../../theme/color.scss";
+
+.app {
+  .navbar{
+    $size:60px;
+    background-color: #fff;
+    height: $size;
+    width: 100%;
+    position: fixed;
+    z-index: 6;
+    top: 0;
+    //border-bottom:2px solid $grey400;
+    box-shadow:0 0 8px grey;
+    .left{
+      float: left;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      height:$size;
+      div{
+        padding: 0 5px;
+        font-size: large;
+        height:$size;
+        text-align: center;
+        cursor:pointer;
+        line-height: $size;
+      }
+      .logoContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .logo {
+          img {
+            height: 45px;
+            font-weight: bold;
+            padding-left: 10px;
+          }
+        }
+        .title {
+          display: flex;
+          flex-direction: column;
+          height: $size;
+          justify-content: center;
+          margin-bottom: 10px;
+          margin-top: 5px;
+          .headerSchrift {
+            height: 35px;
+            line-height: 35px;
+            font-size: 25px;
+          }
+          .nebenSchrift {
+            color: black;
+            line-height: 16px;
+            height: 16px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    .right{
+      float: right;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      height:$size;
+      line-height: $size;
+      margin: 0 10px;
+      font-size: medium;
+      text-align: right;
+      .links{
+        font-size: 14px;
+        margin : 0 5px;
+      }
+      .username{
+        color: cadetblue;
+      }
+    }
+    .noUserRight{
+      padding-right : 20px;
+    }
+  }
+  nav :global(.fa) {
+    font-size: 2em;
+    line-height: 20px;
+  }
+}
+
+.appContent {
+    margin: 50px 0; // for fixed navbar
+}
+
+.bottomText{
+  font-family: "Avenir Next", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 70px;
+  text-align: center;
+  font-size: 11px;
+  margin-bottom: 20px;
+}
+
+.aboutUs{
+  padding-right: 40px;
+}
+
+@include max-screen(768px){
+  .app{
+    .navbar{
+      position:static;
+      $size:40px;
+      display: flex;
+      flex-direction: row;
+      //height:auto;
+      flex-wrap: wrap;
+      .left{
+        width:100%;
+        float: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: row;
+        height:auto;
+        div{
+          padding : 0;
+          font-size: small;
+        }
+        .logoContainer{
+          width:100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          .logo{
+            img{
+              height:45px;
+              //there is already 10px for padding left
+              padding:0 10px;
+            }
+          }
+        }
+        .buttonContainer{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          width:100%;
+        }
+      }
+      .right{
+        float:none;
+        width:100%;
+        //margin-top: 60px;
+        .welcome{
+          display:none;
+        }
+      }
+      .noUserRight{
+        padding-right : 0;
+      }
+    }
+    .appContent{
+      margin-top: 10px;
+      max-width: 100%;
+    }
+  }
+
+}
+
+@include screen(768px, 820px){
+  .app {
+    .navbar {
+      .right{
+        .welcome{
+          display: none;
+        }
+      }
+    }
+  }
+}
