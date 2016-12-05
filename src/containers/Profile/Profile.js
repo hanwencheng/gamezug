@@ -29,25 +29,30 @@ function fetchDataDeferred(getState, dispatch) {
 )
 export default class Entity extends Component {
 
-  //componentDidMount() {
-  //  this.setState({
-  //    // route components are rendered with useful information, like URL params
-  //  })
-  //}
   static propTypes = {
     user: PropTypes.object,
   }
 
+  dateFormat = (date) => {
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const year = date.getFullYear();
+    return day + '/' + month + '/' + year;
+  }
+
   render(){
     const {user} = this.props;
+    const styles = require('./Profile.scss')
     return (
       <div>
         <Helmet title="Profile"/>
-        <div className={styles.list}>
-          <div className={styles.innerList}>
-            <div className={styles.rowContainer}><i className="fa fa-industry"/>Username : &nbsp;&nbsp;  {user.username ?  user.username : ""}</div>
-            <div className={styles.rowContainer}><i className="fa fa-cubes"/> Email : &nbsp;&nbsp;  {user.email ?  user.email : ""}</div>
-            <div className={styles.rowContainer}><i className="fa fa-link"/> Birth Date : &nbsp;&nbsp;  {user.email ? user.email : ""} </div>
+        <div className={styles.container}>
+          <div className={styles.list}>
+            <div className={styles.innerList}>
+              <div className={styles.rowContainer}><i className="fa fa-user"/>&nbsp; Username : &nbsp;&nbsp;  {user.username ?  user.username : "No Username"}</div>
+              <div className={styles.rowContainer}><i className="fa fa-envelope"/>&nbsp; Email : &nbsp;&nbsp;  {user.email ?  user.email : "No Email"}</div>
+              <div className={styles.rowContainer}><i className="fa fa-birthday-cake"/>&nbsp; Birth Date : &nbsp;&nbsp;  {user.birthDate ? this.dateFormat(new Date(user.birthDate)) : "No BirthDate"} </div>
+            </div>
           </div>
         </div>
       </div>

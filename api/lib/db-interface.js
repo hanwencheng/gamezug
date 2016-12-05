@@ -9,16 +9,10 @@ const Errors = config.errors;
 const LOGTITLE = '[DB] ';
 
 
-var House = mongoModel.House
 var User = mongoModel.User
-var Post = mongoModel.Post
-var Entity = mongoModel.Entity
-const entityCollectionName = config.entityCollectionName;
-const houseCollectionName = config.houseCollectionName;
 const userCollectionName = config.userCollectionName;
-const postCollectionName = config.postCollectionName;
-const TYPES = [userCollectionName, houseCollectionName, postCollectionName, entityCollectionName]
-const SCHEMAS = [User, House, Post, Entity]
+const TYPES = [userCollectionName]
+const SCHEMAS = [User]
 
 import {logger} from './logger';
 

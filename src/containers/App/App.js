@@ -50,7 +50,7 @@ export default class App extends Component {
     if (!this.props.user && nextProps.user) {
       // login
       this.props.clearLoginError();
-      this.props.pushState(null, '/main');
+      this.props.pushState(null, '/admin');
     } else if (this.props.user && !nextProps.user) {
       // logout
       this.props.pushState(null, '/');
@@ -81,7 +81,7 @@ export default class App extends Component {
             <div className={styles.logoContainer}>
               <LinkContainer to="/">
                 <div className={styles.logo}>
-                    <img className={styles.hvrWobbleSkew} src={require('../../../static/zhensys.png')}/>
+                    <img className={styles.hvrWobbleSkew} src={require('../../../static/aeria-logo.svg')}/>
                 </div>
               </LinkContainer>
 

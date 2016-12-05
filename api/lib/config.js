@@ -1,6 +1,10 @@
 /**
  * Created by hanwencheng on 1/11/16.
  */
+var awsBucketName = 'test.omzug.com'
+if(process.env.NODE_ENV === "production"){
+  awsBucketName = 'omzug.com'
+}
 
 module.exports = {
   host : 'localhost:27017',

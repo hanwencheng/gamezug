@@ -11,11 +11,9 @@ import {
     Home,
     About,
     Login,
-    LoginSuccess,
     NotFound,
     Register,
-    UserAdmin,
-    Submit,
+    Profile,
     Info,
     Company,
   } from 'containers';
@@ -76,8 +74,8 @@ export default (store) => {
 
       { /* Routes requiring login */ }
       <Route onEnter={requireLogin}>
-        <Route path="loginSuccess" component={LoginSuccess}/>
-        <Route path="admin" component={Company}/>
+        <Route path="admin" component={Profile}/>
+        <Route path="main" component={Profile}/>
       </Route>
 
       { /* Routes */ }

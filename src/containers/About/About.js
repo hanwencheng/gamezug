@@ -16,11 +16,11 @@ export default class About extends Component {
         <Helmet title="About"/>
         <div className={styles.text}>
           <div>
-            <p className={styles.cnText}>Game center is a center for interesting stuff!
+            <p className={styles.cnText}>Aeria game center is a center for interesting stuff!
             </p>
           </div>
           <div>
-             <p className={styles.cnText}>Let it be!</p>
+             <p className={styles.cnText}>Ever played with Dawn of Gods?</p>
           </div>
           <div className={styles.enText}>
             <p>

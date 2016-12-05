@@ -7,15 +7,9 @@ var config = require('./config.js');
 var Schema = mongoose.Schema;
 var inited = false;
 
-const houseCollectionName = config.houseCollectionName;
 const userCollectionName = config.userCollectionName;
-const postCollectionName = config.postCollectionName;
-const entityCollectionName = config.entityCollectionName;
 
-var HouseSchema = require('./schemas/HouseSchema.js')(Schema, houseCollectionName);
 var UserSchema = require('./schemas/UserSchema.js')(Schema, userCollectionName);
-var PostSchema = require('./schemas/PostSchema.js')(Schema, postCollectionName);
-var EntitySchema = require('./schemas/EntitySchema.js')(Schema, entityCollectionName);
 
 //Init database Models
 var initMongoDb = function(){
@@ -43,6 +37,3 @@ module.exports.createId = function(string){
 module.exports.initMongoDb = initMongoDb;
 //module.exports.House = mongoose.model(houseCollectionName, HouseSchema);
 module.exports.User = mongoose.model(userCollectionName, UserSchema)
-module.exports.House = mongoose.model(houseCollectionName, HouseSchema)
-module.exports.Post = mongoose.model(postCollectionName, PostSchema)
-module.exports.Entity = mongoose.model(entityCollectionName, EntitySchema)

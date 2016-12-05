@@ -7,7 +7,7 @@ import {reduxForm} from 'redux-form';
 import {connect} from 'react-redux';
 import registerValidation from './registerValidation';
 import {check as checkEmail} from 'redux/modules/auth';
-import {TextField, RaisedButton} from 'material-ui';
+import {TextField, RaisedButton, DatePicker} from 'material-ui';
 import uiStyles from '../../theme/uiStyles';
 
 const enableAsyncCheck = false;
@@ -28,13 +28,14 @@ const asyncValidate = (value, dispatch) => {
 @connect(
   state => ({
     loggingIn: state.auth.loggingIn,
+    initialValues : state.auth.data,
   }),
   {}
 )
 
 @reduxForm({
   form: 'register',
-  fields : ['email', 'username', 'password', 'passwordRepeat'],
+  fields : ['email', 'username', 'password', 'passwordRepeat', 'birthDate'],
   validate : registerValidation,
   asyncValidate,
   asyncBlurFields: ["email", "name"],
@@ -49,10 +50,17 @@ export default class RegisterForm extends Component{
     loggingIn: PropTypes.bool.isRequired
   }
 
+  dateFormat = (date) => {
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const year = date.getFullYear();
+    return day + '/' + month + '/' + year;
+  }
+
   render() {
     const styles = require('./RegisterForm.scss');
     const {
-      fields: {email, username, password, passwordRepeat},
+      fields: {email, username, password, passwordRepeat, birthDate},
       resetForm,
       handleSubmit,
       asyncValidating,
@@ -84,29 +92,34 @@ export default class RegisterForm extends Component{
       </div>
       <div className={'form-group'}>
         <div>
-          <TextField type="text" hintText="Username" style={inputStyle} floatingLabelText="用户名"
+          <TextField type="text" hintText="Username" style={inputStyle} floatingLabelText="Username"
                      errorText={username.touched && username.error ? username.error : null} {...username}/>
           {asyncValidating === 'username' && <i /* spinning cog *//>}
         </div>
       </div>
       <div className={'form-group'}>
         <div>
-          <TextField type="password" hintText="Password" style={inputStyle} floatingLabelText="密码"
+          <TextField type="password" hintText="Password" style={inputStyle} floatingLabelText="Password"
                      errorText={password.touched && password.error ? password.error : null} {...password}/>
         </div>
       </div>
       <div className={'form-group'}>
         <div>
-          <TextField type="password" hintText="Repeat Password" style={inputStyle} floatingLabelText="重复密码"
+          <TextField type="password" hintText="Repeat Password" style={inputStyle} floatingLabelText="Repeat Password"
                      errorText={getError()} {...passwordRepeat}/>
         </div>
+      </div>
+
+      <div className='form-group'>
+        <DatePicker autoOk={true} value={new Date(birthDate.value)} hintText="Birth Date"
+                    onChange={(event, newDate) => birthDate.onChange(newDate)} formatDate={this.dateFormat}/>
       </div>
       <div className={styles.buttonGroup}>
         <RaisedButton disabled={anyError ? true : loggingIn} style={buttonStyle} onClick={handleSubmit}>
           {loggingIn ?
             <span className="fa fa-spin fa-refresh"/>
             :
-            <span>提交</span>
+            <span>Submit</span>
           }
         </RaisedButton>
         {/*<RaisedButton disabled={loggingIn} secondary={true} style={buttonStyle} onClick={resetForm}>

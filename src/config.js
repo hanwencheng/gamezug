@@ -23,7 +23,7 @@ module.exports = Object.assign({
   noImagePath : 'https://s3.eu-central-1.amazonaws.com/omzug.com/favicon/no-image.jpg',
   mainGifPath : "https://s3.eu-central-1.amazonaws.com/omzug.com/gif/main.gif",
   app: {
-    title: 'Game center',//head changeable
+    title: 'Aeria Games',//head changeable
     description: 'Gaming center',
     introduction: 'a game center ',
     introduction2:'could be fun',

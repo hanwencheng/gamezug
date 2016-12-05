@@ -45,6 +45,7 @@ const initialState = {
   currentSlide: 0,
   data : {
     images : [],
+    birthDate : new Date(),
     contactEmail : "",
     contactPhone : "",
     contactWechat : "",

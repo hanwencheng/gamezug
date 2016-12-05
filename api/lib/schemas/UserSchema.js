@@ -50,17 +50,8 @@ module.exports =  function(Schema, collectionName){
   var UserSchema = new Schema({
     email : {type:String, required:true, index : {unique: true}, validator : emailValidator},
     username: { type: String, required: true, index: { unique: true } , validate: nameValidator},
-    password: { type: String, required: true, validate: nameValidator },
-
-    images : {type : Array, required : false},
-    name : {type : String, required : false},
-    contactEmail : { type : String, required : false, validate : emailValidator},
-    contactPhone : { type : String, required : false, validate : phoneValidator},
-    contactWechat : {type : String, required : false},
-    location : {type : String, required : false},
-    description : {type : String, required : false},
-    website : {type : String, required : false},
-
+    password: { type: String, required: true, validate: passwordValidator },
+    birthDate : {type : Date, required: true},
   },{ strict : true, collection : collectionName, timestamps: true});
 
   UserSchema.pre('save', function(next) {

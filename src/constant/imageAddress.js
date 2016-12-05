@@ -3,12 +3,12 @@
  */
 
 const addresses = {
-  mainImage: "https://s3.eu-central-1.amazonaws.com/omzug.com/gif/mainImage-omzug.gif",
-  loginImage: "https://s3.eu-central-1.amazonaws.com/omzug.com/gif/loginImage-omzug.jpg",
-  registerImage : "https://s3.eu-central-1.amazonaws.com/omzug.com/gif/registerImage-omzug.jpg",
+  mainImage: "http://corporate.aeriagames.com/wp-content/uploads/2015/10/AVA.jpg",
+  loginImage: "http://corporate.aeriagames.com/wp-content/uploads/2015/10/Shaiya.jpg",
+  registerImage : "http://corporate.aeriagames.com/wp-content/uploads/2015/10/S4League.jpg",
   //featureImage :"https://s3.eu-central-1.amazonaws.com/omzug.com/gif/featureImage-omzug1500.png",
-  featureImage:"https://s3.eu-central-1.amazonaws.com/omzug.com/gif/featureImage.png",
-  technologyImage : "https://s3.eu-central-1.amazonaws.com/omzug.com/gif/technologyImage-omzug.png",
+  featureImage:"http://corporate.aeriagames.com/wp-content/uploads/2015/10/DawnOfGods.jpg",
+  technologyImage : "http://corporate.aeriagames.com/wp-content/uploads/2016/05/Aeria_Aussen_edit-e1464103052531.jpg",
   bulbImage:"https://s3.eu-central-1.amazonaws.com/omzug.com/gif/bulbImage.png",
   NotFoundImage:"https://s3.eu-central-1.amazonaws.com/omzug.com/gif/NotFoundImage.png",
 }

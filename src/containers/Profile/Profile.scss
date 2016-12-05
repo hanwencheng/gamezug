@@ -219,9 +219,6 @@
   .card {
     margin:20px;
   }
-  .list{
-
-  }
 }
 
 @include max-screen(768px){
@@ -237,17 +234,15 @@
   .map{
     display: none;
   }
-
+  .list{
+    margin:150px 0 0 50px;
+  }
 }
 
 
 @include max-screen(540px){
   .card{
     min-width: 300px;
-  }
-  .list{
-    width: 200px;
-    padding-top: 10px;
   }
 }
 
@@ -276,17 +271,4 @@
     padding: 10px 10px;
   }
 
-}
-
-@include max-screen(320px){
-  .card {
-    .carousel {
-      .imageContainer {
-        img {
-          max-height: 300px;
-          max-width: 100%;
-        }
-      }
-    }
-  }
 }
