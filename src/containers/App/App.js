@@ -26,11 +26,6 @@ function fetchData(getState, dispatch) {
     user: state.auth.user,
     updated : state.auth.updated,
     adminLoaded : state.admin.loaded,
-    createData : state.entity.createData,
-    locationId : state.entities.locationId,
-    brandList : state.entities.brandList,
-    postCreateData : state.post.createData,
-    postLocationId : state.posts.locationId,
   }),
   {logout, clearLoginError, pushState, onClearUpdate, onUserUpdate})
 export default class App extends Component {
@@ -114,7 +109,7 @@ export default class App extends Component {
           <div className={ user ? styles.right : styles.right + " " + styles.noUserRight}>
             <div className={styles.welcome}><span className={rightLi}><i className="fa fa-child"/> <strong className={styles.username}>{user.username}</strong></span></div>
             <LinkContainer to="/admin">
-              <FlatButton eventKey={3}><span className={rightLi}><i className="fa fa-truck fa-lg"/>Profile</span></FlatButton>
+              <FlatButton eventKey={3}><span className={rightLi}><i className="fa fa-gamepad fa-lg"/>Profile</span></FlatButton>
             </LinkContainer>
             <LinkContainer to="/logout">
               <FlatButton eventKey={8} onClick={this.handleLogout}><span className={rightLi}><i className="fa fa-sign-out fa-lg" /> Logout</span></FlatButton>

@@ -26,9 +26,6 @@ export default class Home extends Component {
             <div className={styles.foto}>
               <a href="/main"><img src={imageAddress.mainImage} /></a>
             </div>
-            <div className={styles.startButton}>
-              <RaisedButton style={uiStyles.buttonStyleGetStarted} linkButton={true} containerElement={<Link to="/main" />} label="Get started"/>
-            </div>
           </div>
         </div>
 

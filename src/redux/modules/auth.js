@@ -292,11 +292,11 @@ export function check(email){
   }
 }
 
-export function login(email, password) {
-  if(!email){
+export function login(username, password) {
+  if(!username){
     return {
       type: LOGIN_FAIL,
-      error : strings.missEmailError,
+      error : strings.missUsernameError,
     }
   }else if(!password){
     return {
@@ -308,7 +308,7 @@ export function login(email, password) {
     types: [LOGIN, LOGIN_SUCCESS, LOGIN_FAIL],
     promise: (client) => client.post('/login', {
       data: {
-        email: email,
+        username: username,
         password : password
       }
     })

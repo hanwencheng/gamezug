@@ -24,8 +24,8 @@ module.exports = Object.assign({
   mainGifPath : "https://s3.eu-central-1.amazonaws.com/omzug.com/gif/main.gif",
   app: {
     title: 'Aeria Games',//head changeable
-    description: 'Gaming center',
-    introduction: 'a game center ',
+    description: 'Aeria Games',
+    introduction: 'Player center ',
     introduction2:'could be fun',
     introductionEn : 'A game center for testing user abilities',
     head: {

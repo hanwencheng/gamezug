@@ -16,8 +16,6 @@ import {logger} from './lib/logger';
 var mongoModel = require('./lib/model.js')
 var mongoConnection = mongoModel.initMongoDb()
 
-
-
 const pretty = new PrettyError();
 const app = express();
 
@@ -27,7 +25,7 @@ const io = new SocketIo(server);
 io.path('/ws');
 
 app.use(session({
-  secret: 'hanwen is cool!!!!',
+  secret: 'gaming is cool!!!!',
   store : new MongoStore({ mongooseConnection: mongoConnection }),
   resave: false,
   saveUninitialized: false,
@@ -87,6 +85,7 @@ if (config.apiPort) {
     logger.info('==> 💻  Send requests to http://%s:%s', config.apiHost, config.apiPort);
   });
 
+  //also socket is supported
   io.on('connection', (socket) => {
     socket.emit('news', {msg: `'Hello World!' from server`});
 

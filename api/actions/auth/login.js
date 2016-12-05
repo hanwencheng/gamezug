@@ -11,7 +11,7 @@ export default function login(req) {
    * }
    */
   return new Promise((resolve, reject)=>{
-    DB.userLogin(req.body.email, req.body.password,
+    DB.userLogin(req.body.username, req.body.password,
       function(data){
         req.session.user = data.data;
         logger.trace('the user session information is', req.session)

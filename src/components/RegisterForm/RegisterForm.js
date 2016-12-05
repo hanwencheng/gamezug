@@ -84,26 +84,26 @@ export default class RegisterForm extends Component{
 
     return (
     <form className={styles.registerForm} onSubmit={handleSubmit}>
-      <div className={'form-group'}>
-        <div>
-          <TextField type="text" hintText="Email" style={inputStyle} floatingLabelText="Email"
-                     errorText={email.touched && email.error ? email.error : null}  {...email}/>
-        </div>
-      </div>
-      <div className={'form-group'}>
+      <div className='form-group'>
         <div>
           <TextField type="text" hintText="Username" style={inputStyle} floatingLabelText="Username"
                      errorText={username.touched && username.error ? username.error : null} {...username}/>
           {asyncValidating === 'username' && <i /* spinning cog *//>}
         </div>
       </div>
-      <div className={'form-group'}>
+      <div className='form-group'>
+        <div>
+          <TextField type="text" hintText="Email" style={inputStyle} floatingLabelText="Email"
+                     errorText={email.touched && email.error ? email.error : null}  {...email}/>
+        </div>
+      </div>
+      <div className='form-group'>
         <div>
           <TextField type="password" hintText="Password" style={inputStyle} floatingLabelText="Password"
                      errorText={password.touched && password.error ? password.error : null} {...password}/>
         </div>
       </div>
-      <div className={'form-group'}>
+      <div className='form-group'>
         <div>
           <TextField type="password" hintText="Repeat Password" style={inputStyle} floatingLabelText="Repeat Password"
                      errorText={getError()} {...passwordRepeat}/>

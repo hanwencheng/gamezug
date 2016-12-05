@@ -6,7 +6,7 @@ const strings = {
   editSuccess : "edit success",
   submitSuccess : "submit success",
   submitting : "submitting...",
-  missEmailError : "please input the username",
+  missUsernameError : "please input the username",
   missPasswordError : "please input password",
   loginFailError : "Login failed, please check again",
   deleteImageTooltip : "delete image",
